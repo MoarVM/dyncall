@@ -6,7 +6,7 @@
  Description: 
  License:
 
-   Copyright (c) 2010-2011 Olivier Chafik <olivier.chafik@gmail.com>
+   Copyright (c) 2010-2015 Olivier Chafik <olivier.chafik@gmail.com>
 
    Permission to use, copy, modify, and distribute this software for any
    purpose with or without fee is hereby granted, provided that the above
@@ -24,12 +24,12 @@
 
 
 
+
 #include "test_framework.h"
 #include "../../dyncall/dyncall.h"
 #include "../../dyncall/dyncall_signature.h"
 #include "../../dyncall/dyncall_struct.h"
-#include <stdio.h>
-//#include "../common/platformInit.h"
+#include "../common/platformInit.h"
 
 #define DC_TEST_INT_EQUAL(expected, computed) { \
 	if (expected != computed) \

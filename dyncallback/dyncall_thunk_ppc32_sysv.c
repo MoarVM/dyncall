@@ -2,11 +2,11 @@
 
  Package: dyncall
  Library: dyncallback
- File: dyncallback/dyncall_thunk_ppc32.c
+ File: dyncallback/dyncall_thunk_ppc32_sysv.c
  Description: Thunks on PowerPC 32-bit System V ABI
  License:
 
-   Copyright (c) 2015      Daniel Adler <dadler@uni-goettingen.de>
+   Copyright (c) 2015 Daniel Adler <dadler@uni-goettingen.de>
 
    Permission to use, copy, modify, and distribute this software for any
    purpose with or without fee is hereby granted, provided that the above
@@ -21,6 +21,7 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 
 #include "dyncall_thunk.h"
 

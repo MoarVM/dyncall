@@ -6,8 +6,8 @@
  Description: 
  License:
 
-   Copyright (c) 2011 Daniel Adler <dadler@uni-goettingen.de>,
-                      Tassilo Philipp <tphilipp@potion-studios.com>
+   Copyright (c) 2011-2015 Daniel Adler <dadler@uni-goettingen.de>,
+                           Tassilo Philipp <tphilipp@potion-studios.com>
 
    Permission to use, copy, modify, and distribute this software for any
    purpose with or without fee is hereby granted, provided that the above
@@ -22,6 +22,7 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 #include "_auto_config.h"
 #include <assert.h>
 #include "dyncall_callback.h"
@@ -63,22 +64,6 @@ char handler(DCCallback* that, DCArgs* input, DCValue* output, void* userdata)
 
   /* currently, no void result is supported by the suite */
   GetReferenceResult(output, ch);
-
-#if defined(DC__Arch_PPC64) && defined(DC__Endian_BIG)
-  switch (ch) {
-    case DC_SIGCHAR_BOOL:     output->l = ((long long)output->B); break;
-    case DC_SIGCHAR_CHAR:     output->l = ((long long)output->c); break;
-    case DC_SIGCHAR_UCHAR:    output->l = ((long long)output->C); break;
-    case DC_SIGCHAR_SHORT:    output->l = ((long long)output->s); break;
-    case DC_SIGCHAR_USHORT:   output->l = ((long long)output->S); break;
-    case DC_SIGCHAR_INT:      output->l = ((long long)output->i); break;
-    case DC_SIGCHAR_UINT:     output->l = ((long long)output->I); break;
-    case DC_SIGCHAR_LONG:     output->l = ((long long)output->j); break;
-    case DC_SIGCHAR_ULONG:    output->l = ((long long)output->J); break;
-    case DC_SIGCHAR_ULONGLONG:output->l = ((long long)output->L); break;
-    case DC_SIGCHAR_FLOAT:    output->d = ((double)output->f); break;
-  }
-#endif
 
   switch(ch) {
     case DC_SIGCHAR_BOOL:     return 'B';

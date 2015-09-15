@@ -3,10 +3,10 @@
  Package: dyncall
  Library: dyncall
  File: dyncall/dyncall_call_arm32_thumb_armhf.S
- Description: Call Kernel for ARM 32-bit ARM Architecture - Hard Float in Thumb code 
+ Description: Call Kernel for ARM 32-bit ARM Architecture - Hard Float in Thumb code
  License:
 
-   Copyright (c) 2007-2012 Daniel Adler <dadler@uni-goettingen.de>, 
+   Copyright (c) 2007-2015 Daniel Adler <dadler@uni-goettingen.de>, 
                            Tassilo Philipp <tphilipp@potion-studios.com>
 
    Permission to use, copy, modify, and distribute this software for any
@@ -22,6 +22,7 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 
 
 #include "../portasm/portasm-arm.S"

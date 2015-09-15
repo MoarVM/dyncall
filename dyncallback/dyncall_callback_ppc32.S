@@ -6,7 +6,7 @@
  Description: Callback Thunk Entry for PowerPC 32-bit System V Big-Endian ABI
  License:
 
-   Copyright (c) 2015      Daniel Adler <dadler@uni-goettingen.de>
+   Copyright (c) 2015 Daniel Adler <dadler@uni-goettingen.de>
 
    Permission to use, copy, modify, and distribute this software for any
    purpose with or without fee is hereby granted, provided that the above
@@ -21,6 +21,7 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 
 #include "../portasm/portasm-ppc.S"
 

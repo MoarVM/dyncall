@@ -6,7 +6,7 @@
  Description: 
  License:
 
-   Copyright (c) 2007-2011 Daniel Adler <dadler@uni-goettingen.de>, 
+   Copyright (c) 2007-2015 Daniel Adler <dadler@uni-goettingen.de>, 
                            Tassilo Philipp <tphilipp@potion-studios.com>
                            Olivier Chafik <olivier.chafik@gmail.com>
 
@@ -23,6 +23,7 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 
 
 #include "dynload.h"

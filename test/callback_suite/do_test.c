@@ -6,8 +6,8 @@
  Description: 
  License:
 
-   Copyright (c) 2011 Daniel Adler <dadler@uni-goettingen.de>,
-                      Tassilo Philipp <tphilipp@potion-studios.com>
+   Copyright (c) 2011-2015 Daniel Adler <dadler@uni-goettingen.de>,
+                           Tassilo Philipp <tphilipp@potion-studios.com>
 
    Permission to use, copy, modify, and distribute this software for any
    purpose with or without fee is hereby granted, provided that the above
@@ -22,6 +22,7 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 #include <assert.h>
 #include "_auto_config.h"
 #include "invokers.h"
@@ -30,7 +31,7 @@
 #include "signature_utils.h"
 #include "env.h"
 #include "print.h"
-#include <stdio.h>
+#include "../common/platformInit.h"
 
 int CompareValues(char type, DCValue* a, DCValue* b)
 {

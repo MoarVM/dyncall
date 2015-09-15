@@ -6,7 +6,7 @@
  Description: auto-select default callvm (includes other C sources).
  License:
 
-   Copyright (c) 2007-2011 Daniel Adler <dadler@uni-goettingen.de>, 
+   Copyright (c) 2007-2015 Daniel Adler <dadler@uni-goettingen.de>, 
                            Tassilo Philipp <tphilipp@potion-studios.com>
 
    Permission to use, copy, modify, and distribute this software for any
@@ -22,6 +22,7 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 
 
 #include "dyncall_macros.h"
@@ -59,11 +60,17 @@
 #    include "dyncall_callvm_arm32_thumb.c"
 #  endif
 #elif defined(DC__Arch_ARM64)
-#  include "dyncall_callvm_arm64.c"
+#  if defined(DC__OS_Darwin)
+#    include "dyncall_callvm_arm64_apple.c"
+#  else
+#    include "dyncall_callvm_arm64.c"
+#  endif
 #elif defined(DC__Arch_Sparc)
 #  include "dyncall_callvm_sparc.c"
 #elif defined(DC__Arch_Sparcv9)
 #  include "dyncall_callvm_sparc_v9.c"
+#elif defined(DC__Arch_RiscV)
+#  include "dyncall_callvm_riscv.c"
 #else
 #  error unsupported platform
 #endif

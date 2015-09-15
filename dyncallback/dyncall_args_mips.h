@@ -6,8 +6,8 @@
  Description: Callback's Arguments VM - Header for MIPS
  License:
 
-   Copyright (c) 2013 Daniel Adler <dadler@uni-goettingen.de>,
-                      Tassilo Philipp <tphilipp@potion-studios.com>
+   Copyright (c) 2013-2015 Daniel Adler <dadler@uni-goettingen.de>,
+                           Tassilo Philipp <tphilipp@potion-studios.com>
 
    Permission to use, copy, modify, and distribute this software for any
    purpose with or without fee is hereby granted, provided that the above
@@ -22,6 +22,7 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 
 #ifndef DYNCALLBACK_ARGS_MIPS_H
 #define DYNCALLBACK_ARGS_MIPS_H

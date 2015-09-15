@@ -6,7 +6,7 @@
  Description: Callback's Arguments VM - Implementation for sparc32 - not yet
  License:
 
-   Copyright (c) 2007-2011 Daniel Adler <dadler@uni-goettingen.de>,
+   Copyright (c) 2007-2015 Daniel Adler <dadler@uni-goettingen.de>,
                            Tassilo Philipp <tphilipp@potion-studios.com>
 
    Permission to use, copy, modify, and distribute this software for any
@@ -22,6 +22,7 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 
 #include "dyncall_args_sparc32.h"
 

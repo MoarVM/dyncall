@@ -1,5 +1,8 @@
-0.9:
+1.0:
 ----
+- autovar was never really pushed all the way through and still plays second
+  fiddle to dyncall_macros.h, clean this all up, eventually (Tassilo: for now, I
+  removed out of sync files to avoid confusion; but still probably duped code)
 - ppc32 callback fixes on bsd
 - make install should install manpages
 - mailing list announcements (html email?)
@@ -8,14 +11,15 @@
       - callback_plain retval wrong (not only platform)
     * THUMB:
       - ellipsis (might be test itself, not respecting fixed part of args)
-      - retvals of call_suite (maybe all retvals, in general)
       - callback_plain retval
       - callf
-
-build-system:
--------------
-- cmake mac os x universal binary builds with *.S does not build 
-  multiple architectures
+- fix Minix/x86 callbacks (see callback_suite)
+- fix Linux/rpi callbacks (call_suite)
+- armhf callback support
+- armhf callconv manual entry
+- add portable "make install"
+- support Solaris11 CFLAGS with -D_FILE_OFFSET_BITS=64
+- make sure selinux works (esp. regarding NX bits, asm might need (or similar): .section .note.GNU-stack,"",@progbits)
 
 portasm:
 --------
@@ -34,7 +38,6 @@ dyncall:
   * linux
 - other syscalls
 
-
 dynload:
 --------
 - bug: test/nm crashes on qemu mips linux o32 debian etch
@@ -49,7 +52,7 @@ dyncallback:
 ------------
 - callback_plain's return value not correct anymore on NDS (maybe just broken testcode?)
 - add MIPS callbacks for eabi, n32, o32 (thunks are working)
-- finish PPC32 callbacks (see bugs section, below)
+- finish PPC32 callbacks (see bugs section, below, BSD not working)
 
 bindings:
 ---------
@@ -95,18 +98,23 @@ nice to have:
 
 bugs:
 -----
+- callconv set specifically for platform that has only one (default) excepts for some
+  platforms, eg. setting X64_sysv on amd64/Linux - keeping cdecl which is the same in
+  this case, works
 - callbacks on ppc32 only work on linux and apple (osx abi), but not BSD
 - vararg function calls don't work for ARM THUMB mode (Daniel's new interface for modesetting for varag
   args should be used); adapt test/ellipsis and/or retest
 
 missing implementations (descending priority):
 ----------------------------------------------
+- riscv
 - itanium
 - 68k, 88k, 6502, etc.
 - alpha
 - superh
 - cell
 - blackfin
+- s/390
 - z80
 - hppa
 - vax
@@ -115,10 +123,4 @@ missing implementations (descending priority):
 - amd29k
 - arc
 - seaforth
-
-available hardware for outstanding ports:
------------------------------------------
-- 68k: Tassilo's old Palm m100 (MC68EZ328 (16MHz))
-- sh4: Tassilo's Dreamcast
-- sigmatel stmp3550b: Daniel's iPod Nano
 

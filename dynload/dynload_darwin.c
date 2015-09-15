@@ -6,7 +6,7 @@
  Description: dynload module for .dylib (mach-o darwin/OS X) files
  License:
 
-   Copyright (c) 2007-2011 Olivier Chafik <olivier.chafik@gmail.com>
+   Copyright (c) 2007-2015 Olivier Chafik <olivier.chafik@gmail.com>
                            Minor bug-fix modifications by Daniel Adler.
 
    Permission to use, copy, modify, and distribute this software for any
@@ -22,6 +22,7 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 
 
 /*

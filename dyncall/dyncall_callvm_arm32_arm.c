@@ -6,7 +6,7 @@
  Description: ARM 32-bit "arm" ABI callvm implementation
  License:
 
-   Copyright (c) 2007-2011 Daniel Adler <dadler@uni-goettingen.de>, 
+   Copyright (c) 2007-2015 Daniel Adler <dadler@uni-goettingen.de>, 
                            Tassilo Philipp <tphilipp@potion-studios.com>
 
    Permission to use, copy, modify, and distribute this software for any
@@ -22,6 +22,7 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 
 
 /*
@@ -148,7 +149,11 @@ static void dc_callvm_argPointer_arm32_arm(DCCallVM* in_self, DCpointer x)
 void dc_callvm_call_arm32_arm(DCCallVM* in_self, DCpointer target)
 {
   DCCallVM_arm32_arm* self = (DCCallVM_arm32_arm*)in_self;
-  dcCall_arm32_arm(target, dcVecData(&self->mVecHead), dcVecSize(&self->mVecHead));
+  // This cast is needed in order for the cleanup code in the caller (this very function) to not
+  // overwrite and use r0 and r1, as we want to pass them back. On some platforms (FreeBSD/arm, Nintendo DS
+  // the compiler generates cleanup code that writes to those registers by assuming dcCall_arm32_arm didn't
+  // use them.
+  ((DClonglong(*)(DCpointer, DCpointer, DCsize))&dcCall_arm32_arm)(target, dcVecData(&self->mVecHead), dcVecSize(&self->mVecHead));
 }
 
 

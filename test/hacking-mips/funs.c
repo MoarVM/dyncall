@@ -6,8 +6,8 @@
  Description: 
  License:
 
-   Copyright (c) 2011 Daniel Adler <dadler@uni-goettingen.de>,
-                      Tassilo Philipp <tphilipp@potion-studios.com>
+   Copyright (c) 2011-2015 Daniel Adler <dadler@uni-goettingen.de>,
+                           Tassilo Philipp <tphilipp@potion-studios.com>
 
    Permission to use, copy, modify, and distribute this software for any
    purpose with or without fee is hereby granted, provided that the above
@@ -22,6 +22,7 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 typedef float f;
 f _ffffffffff(f f0, f f1, f f2, f f3, f f4, f f5, f f6, f f7, f f8, f f9)
 {

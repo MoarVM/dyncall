@@ -6,7 +6,7 @@
  Description: 
  License:
 
-   Copyright (c) 2007-2011 Daniel Adler <dadler@uni-goettingen.de>, 
+   Copyright (c) 2007-2015 Daniel Adler <dadler@uni-goettingen.de>, 
                            Tassilo Philipp <tphilipp@potion-studios.com>
 
    Permission to use, copy, modify, and distribute this software for any
@@ -25,10 +25,12 @@
 
 
 
+
 #include "test_framework.h"
 #include "../../dyncall/dyncall.h"
-#include <stdio.h>
 #include "../common/platformInit.h"
+#include "../common/platformInit.c" /* Impl. for functions only used in this translation unit */
+
 
 /* ------------------------------------------------------------------------- 
  * test: identity function calls 

@@ -6,7 +6,7 @@
  Description: 
  License:
 
-   Copyright (c) 2007-2011 Olivier Chafik <olivier.chafik@gmail.com>
+   Copyright (c) 2007-2015 Olivier Chafik <olivier.chafik@gmail.com>
 
    Permission to use, copy, modify, and distribute this software for any
    purpose with or without fee is hereby granted, provided that the above
@@ -23,6 +23,7 @@
 */
 
 
+
 /*
  
  dynamic symbol resolver for Mach-O
@@ -37,7 +38,7 @@
 #include <dlfcn.h>
 #include <string.h>
 
-#if defined(ARCH_X64)
+#if defined(ARCH_X64) //@@@ use dyncall_macros.h
 #define MACH_HEADER_TYPE mach_header_64
 #define SEGMENT_COMMAND segment_command_64
 #define NLIST_TYPE nlist_64

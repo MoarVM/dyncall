@@ -6,8 +6,8 @@
  Description: 
  License:
 
-   Copyright (c) 2011 Daniel Adler <dadler@uni-goettingen.de>,
-                      Tassilo Philipp <tphilipp@potion-studios.com>
+   Copyright (c) 2011-2015 Daniel Adler <dadler@uni-goettingen.de>,
+                           Tassilo Philipp <tphilipp@potion-studios.com>
 
    Permission to use, copy, modify, and distribute this software for any
    purpose with or without fee is hereby granted, provided that the above
@@ -22,6 +22,7 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 #ifndef AUTOVAR_ARCH_H
 #define AUTOVAR_ARCH_H
 
@@ -32,13 +33,15 @@
 # define ARCH_X64
 #elif defined(_M_IA64) || defined(__ia64__)
 # define ARCH_IA64
-#elif defined(__ppc64__) || defined(_ARCH_PPC64) || defined(__power64__)
-# define ARCH_PPC64
 #elif defined(_M_PPC) || defined(__powerpc__) || defined(__powerpc) || defined(__POWERPC__) || defined(__ppc__) || defined(__power__)
-# define ARCH_PPC
+# if defined(__ppc64__) || defined(_ARCH_PPC64) || defined(__power64__) || defined(__powerpc64__)
+#   define ARCH_PPC64
+# else
+#   define ARCH_PPC
+# endif
 #elif defined(__mips64__) || defined(__mips64)
 # define ARCH_MIPS64
-#elif defined(_M_MRX000) || defined(__mips__)
+#elif defined(_M_MRX000) || defined(__mips__) || defined(__mips) || defined(_mips)
 # define ARCH_MIPS
 #elif defined(__arm__)
 # define ARCH_ARM
@@ -47,7 +50,7 @@
 # endif
 #elif defined(__sh__)
 # define ARCH_SH
-#elif defined(__sparcv9) || ( defined(__sparc) && defined(__arch64__) ) 
+#elif defined(__sparcv9) || defined(__sparc64__) || ( defined(__sparc) && defined(__arch64__) ) 
 # define ARCH_SPARC64
 #elif defined(__sparc)
 # define ARCH_SPARC

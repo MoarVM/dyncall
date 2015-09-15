@@ -6,8 +6,8 @@
  Description: 
  License:
 
-   Copyright (c) 2011 Daniel Adler <dadler@uni-goettingen.de>,
-                      Tassilo Philipp <tphilipp@potion-studios.com>
+   Copyright (c) 2011-2015 Daniel Adler <dadler@uni-goettingen.de>,
+                           Tassilo Philipp <tphilipp@potion-studios.com>
 
    Permission to use, copy, modify, and distribute this software for any
    purpose with or without fee is hereby granted, provided that the above
@@ -22,9 +22,11 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 #include "dyncall.h"
 #include "globals.h"
-#include <stdio.h>
+#include "../common/platformInit.h"
+
 int invoke(char const* signature, void* t)
 {
   DCCallVM   * p = (DCCallVM*) G_callvm;

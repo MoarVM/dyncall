@@ -3,11 +3,11 @@
  Package: dyncall
  Library: dyncall
  File: dyncall/dyncall_call_arm64.h
- Description: ARM 64-bit 
+ Description: ARM 64-bit
  License:
 
-   Copyright (c) 2007-2015 Daniel Adler <dadler@uni-goettingen.de>, 
-                           Tassilo Philipp <tphilipp@potion-studios.com>
+   Copyright (c) 2015 Daniel Adler <dadler@uni-goettingen.de>, 
+                      Tassilo Philipp <tphilipp@potion-studios.com>
 
    Permission to use, copy, modify, and distribute this software for any
    purpose with or without fee is hereby granted, provided that the above
@@ -22,6 +22,7 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 
 
 #ifndef DYNCALL_CALL_ARM64_DEBIAN_H

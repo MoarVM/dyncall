@@ -123,3 +123,16 @@ parameter area                     & \vdots &                                   
 
 \newpage
 
+
+\subsubsection{Apple's ARM64 Function Calling Conventions}
+
+\paragraph{Overview}
+
+Apple's ARM64 calling convention is based on the AAPCS64 standard, however, diverges in some ways.
+Only the differences are listed here, for more details, take a look at Apple's official documentation \cite{AppleARM64}.
+
+\begin{itemize}
+\item arguments passed via stack use only the space they need, but are subject to the type alignment requirements (which is 1 byte for char and bool, 2 for short, 4 for int and 8 for every other type)
+\item caller is required to sign and zero-extend arguments smaller than 32bits
+\end{itemize}
+

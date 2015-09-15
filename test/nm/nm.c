@@ -6,7 +6,7 @@
  Description: 
  License:
 
-   Copyright (c) 2007-2011 Daniel Adler <dadler@uni-goettingen.de>, 
+   Copyright (c) 2007-2015 Daniel Adler <dadler@uni-goettingen.de>, 
                            Tassilo Philipp <tphilipp@potion-studios.com>
 
    Permission to use, copy, modify, and distribute this software for any
@@ -24,9 +24,10 @@
 */
 
 
+
 #include "../../dynload/dynload.h"
 #include "../../dynload/dynload_alloc.h"
-#include <stdio.h>
+#include "../common/platformInit.h"
 
 void list_syms(const char* filePath)
 {

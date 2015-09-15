@@ -3,7 +3,7 @@
  Package: dyncall
  Library: dyncallback
  File: dyncallback/dyncall_callback_ppc32.c
- Description: Callback - Implementation Header for ppc32 
+ Description: Callback - Implementation Header for ppc32
  License:
 
    Copyright (c) 2007-2015 Daniel Adler <dadler@uni-goettingen.de>,
@@ -22,6 +22,7 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 
 #include "dyncall_callback.h"
 #include "dyncall_callback_ppc32.h"

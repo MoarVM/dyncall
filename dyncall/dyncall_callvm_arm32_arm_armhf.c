@@ -2,11 +2,11 @@
 
  Package: dyncall
  Library: dyncall
- File: dyncall/arm_armhf.c
+ File: dyncall/dyncall_callvm_arm32_arm_armhf.c
  Description: ARM 'armhf' ABI implementation
  License:
 
-   Copyright (c) 2007-2012 Daniel Adler <dadler@uni-goettingen.de>, 
+   Copyright (c) 2007-2015 Daniel Adler <dadler@uni-goettingen.de>, 
                            Tassilo Philipp <tphilipp@potion-studios.com>
 
    Permission to use, copy, modify, and distribute this software for any
@@ -22,6 +22,7 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 
 #include "dyncall_callvm_arm32_arm_armhf.h"
 #include "dyncall_alloc.h"

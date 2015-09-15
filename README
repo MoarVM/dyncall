@@ -10,10 +10,11 @@ It comprises three independent components, available as C libraries, namely:
  - 'dynload' for loading code.
 
 The package provides abstractions to the Application Binary Interface 
-of various hardware platforms such as x86, AMD64, ARM32/64, ARM32/64,
-PowerPCC32/64, MIPS32/64 and SPARC32/64.
+of various hardware platforms such as x86, AMD64, ARM32/64, PowerPC32/64,
+MIPS32/64 and SPARC32/64.
 
-Our releases are thoroughly tested using a flexible test suite.
+Our releases are thoroughly tested across all supported platforms using a
+flexible test suite.
 
 A typical application for the use of dyncall is the back-end of a FFI 
 (foreign function interface) for scripting languages to connect with 
@@ -21,7 +22,8 @@ the C/C++ world.
 
 The binary footprint of the package is approx. 10-20 kb, depending on
 the platform.
-A test suite and comprehensive documentation is available.
+Besides the test suite already mentioned, comprehensive documentation is
+available.
 
 
 Building the libraries

@@ -3,7 +3,7 @@
  Package: dyncall
  Library: dyncallback
  File: dyncallback/dyncall_callback_ppc64.c
- Description: Callback - Implementation Header for ppc64 
+ Description: Callback - Implementation Header for ppc64
  License:
 
    Copyright (c) 2014-2015 Masanori Mitsugi <mitsugi@linux.vnet.ibm.com>
@@ -21,6 +21,7 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 
 #include "dyncall_callback.h"
 #include "dyncall_callback_ppc64.h"

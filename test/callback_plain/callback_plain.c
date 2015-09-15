@@ -6,8 +6,8 @@
  Description: 
  License:
 
-   Copyright (c) 2011 Daniel Adler <dadler@uni-goettingen.de>,
-                      Tassilo Philipp <tphilipp@potion-studios.com>
+   Copyright (c) 2011-2015 Daniel Adler <dadler@uni-goettingen.de>,
+                           Tassilo Philipp <tphilipp@potion-studios.com>
 
    Permission to use, copy, modify, and distribute this software for any
    purpose with or without fee is hereby granted, provided that the above
@@ -22,10 +22,11 @@
    OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 */
+
 #include "../../dyncallback/dyncall_thunk.h"
 #include "../../dyncallback/dyncall_callback.h"
-#include <stdio.h>
 #include "../common/platformInit.h"
+#include "../common/platformInit.c" /* Impl. for functions only used in this translation unit */
 
 
 char cbHandler(DCCallback* cb, DCArgs* args, DCValue* result, void* userdata)
@@ -51,6 +52,7 @@ char cbHandler(DCCallback* cb, DCArgs* args, DCValue* result, void* userdata)
   if(arg3 ==    3) ++*ud;
   if(arg4 == 1.82) ++*ud;
   if(arg5 == 9909) ++*ud;
+
   result->s = 1234;
   return 's';
 }
@@ -66,7 +68,7 @@ int main()
 
   printf("about to callback...\n");
   cb = dcbNewCallback("ifsdl)s", &cbHandler, &userdata);
-  result = ((short(*)(int, float, short, double, long long))cb)(123, 23.f, 3, 1.82, 9909llu);
+  result = ((short(*)(int, float, short, double, long long))cb)(123, 23.f, 3, 1.82, 9909ull);
   dcbFreeCallback(cb);
   printf("successfully returned from callback\n");
   printf("return value (should be 1234): %d\n", result);

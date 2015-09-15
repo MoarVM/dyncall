@@ -62,10 +62,14 @@ ios-os:
 	IOS_PLATFORM="OS"        ${MAKE_CMD} ios
 # NOTE iOS 6.1 does not support armv6 (has no libs)
 ios61-os:
-	IOS_SDK="6.1" IOS_ARCH="-arch armv7"            ${MAKE_CMD} ios-os
+	IOS_SDK="6.1" IOS_ARCH="-arch armv7"             ${MAKE_CMD} ios-os
 ios61-os-no-thumb:
-	IOS_SDK="6.1" IOS_ARCH="-arch armv7 -mno-thumb" ${MAKE_CMD} ios-os
+	IOS_SDK="6.1" IOS_ARCH="-arch armv7 -mno-thumb"  ${MAKE_CMD} ios-os
 ios61-sim:
-	IOS_SDK="6.1" IOS_ARCH="-arch i386"             ${MAKE_CMD} ios-sim
+	IOS_SDK="6.1" IOS_ARCH="-arch i386"              ${MAKE_CMD} ios-sim
+ios83-os-universal:
+	IOS_SDK="8.3" IOS_ARCH="-arch armv7 -arch arm64" ${MAKE_CMD} ios-os
+ios83-sim:
+	IOS_SDK="8.3" IOS_ARCH="-arch i386"              ${MAKE_CMD} ios-sim
 
 .PHONY: all tests clean install bsd linux linux64 minix-gcc mingw32 osx osx-universal sun sun-64bit sun-gcc sun-gcc-64bit
