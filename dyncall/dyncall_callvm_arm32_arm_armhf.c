@@ -106,6 +106,12 @@ static void a_float(DCCallVM* in_p, DCfloat x)
 static void a_double(DCCallVM* in_p, DCdouble x)
 {
   DCCallVM_arm32_armhf* p = (DCCallVM_arm32_armhf*)in_p;
+
+  union {
+      DCdouble d;
+      DCchar   b[8];
+  } v; // ,w;
+
   if (p->d < 16) {
     * (double*) &p->S[p->d] = x;
     p->d += 2;
@@ -117,10 +123,6 @@ static void a_double(DCCallVM* in_p, DCdouble x)
     }
   } else {
     p->s = 16;
-    union {
-      DCdouble d;
-      DCchar   b[8];
-    } v; // ,w;
     v.d = x;
 #if 0
     w.b[0] = v.b[7];
