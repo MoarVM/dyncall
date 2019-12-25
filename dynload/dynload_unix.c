@@ -82,7 +82,7 @@ void dlFreeLibrary(DLLib* pLib)
 /* that: check for RTLD_DI_LINKMAP (#define for dlinfo()), or if GNU C Lib */
 /* is used (where RTLD_DI_LINKMAP is an enum), or by OS (dlinfo comes from */
 /* Solaris), etc. */
-#if defined(RTLD_DI_LINKMAP) || defined(OS_SunOS) || defined(__GLIBC__) /* @@@ dlinfo() was introduced in glibc 2.3.3 (in 2003), somehow check for that, also */
+#if defined(RTLD_DI_LINKMAP) || defined(OS_SunOS) || (defined(__GLIBC__) && !defined(__UCLIBC__)) /* @@@ dlinfo() was introduced in glibc 2.3.3 (in 2003), somehow check for that, also */
 
 #include <link.h>
 
