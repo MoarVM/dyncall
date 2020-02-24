@@ -107,7 +107,11 @@ int dlGetLibraryPath(DLLib* pLib, char* sOut, int bufSize)
 {
   struct link_map* p = NULL;
   int l = -1;
+#if defined(RTLD_SELF)
   if(dlinfo(pLib ? pLib : RTLD_SELF, RTLD_DI_LINKMAP, &p) == 0)
+#else
+  if(pLib && dlinfo(pLib, RTLD_DI_LINKMAP, &p) == 0)
+#endif
     l = dl_strlen_strcpy(sOut, p->l_name, bufSize);
 
   return l+1; /* strlen + '\0' */
